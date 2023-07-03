@@ -1,0 +1,293 @@
+<?php
+    session_start();
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/rules.css">
+    <link rel="stylesheet" href="./mainAuth.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@200;300&display=swap" rel="stylesheet">
+    <title>Tarandy</title>
+</head>
+<body class="body">
+<div class="page">
+    <header class="header">
+        <div class="containerWrapper">
+            <div class="containerFluidInner">
+                <div class="defaultWrapper">
+                    <div class="header_burger">
+                        <span></span>
+                    </div>
+                    <div class="logo">
+                        <a href="http://tarandy.com/main.php"><img src="./IMG/mainIMG/image.png" alt="" srcset=""></a>
+                    </div>
+                    <div class="smallMenu">
+                        <a href="http://tarandy.com/main.php" class="option"><div class="menulink">Главная</div></a>
+                        <a href="http://tarandy.com/donate.php" class="option"><div class="menulink">Донат</div></a>
+                        <a href="http://tarandy.com/guides.php" class="option"><div class="menulink">Гайды</div></a>
+                        <a href="http://tarandy.com/rules.php" class="option"><div class="menulink">Правила</div></a>
+                        <a href="http://tarandy.com/about.php" class="option"><div class="menulink">О проекте</div></a>
+                    </div>
+                    <div class="plus1">
+                        <a href="./vendor/update.php?id=<?= $_SESSION['user']['id']?>">
+                            <img src="./IMG/mainIMG/reload.png" class="reload" alt="" srcset="">
+                        </a>
+                    </div>
+                    <div class="diamondsPhone">
+                        <img src="./IMG/mainIMG/diamond.svg" alt="">
+                        <div class="valueOfDiamonds">
+                            <?php
+                                echo $_SESSION['user']['diamonds'];
+                            ?>
+                        </div>
+                    </div>
+                    <div class="userPhoneMenu">
+                        <div class="circle">
+                            <div class="firstWord">
+                                <span>
+                                        <?php
+                                            echo $_SESSION['user']['login'][0];
+                                        ?>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="userMenu">
+                        <div class="plus">
+                            <a href="./vendor/update.php?id=<?= $_SESSION['user']['id']?>">
+                                <img src="./IMG/mainIMG/reload.png"  alt="" srcset="">
+                            </a>
+                        </div>
+                        <div class="diamonds">
+                            <img src="./IMG/mainIMG/diamond.svg" alt="">
+                            <div class="valueOfDiamonds">
+                                <?php
+                                    echo $_SESSION['user']['diamonds'];
+                                ?>
+                            </div>
+                        </div>
+                        <div class="user">
+                            <div class="dropContainer">
+                                <button class="dropTrigger">
+                                    <div class="userGroup">
+                                        <?php
+                                            echo $_SESSION['user']['group'];
+                                        ?>
+                                    </div>
+                                    <div class="username">
+                                        <?php
+                                            echo $_SESSION['user']['login'];
+                                        ?>
+                                    </div>
+                                    <div class="buttonStatement"></div>
+                                </button>
+                                <div class="dropdownContent">
+                                    <a href="./vendor/logout.php">Выйти</a>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#" class="option">
+                            <div class="userOption">Выйти</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="mainWrapper">
+            <div class="mainContainerFluidInner">
+                <div class="mainDefaultWrapper">
+                    <div class="content">
+                        <div class="contentHeader">
+                            <div class="contentTheme">
+                                <img src="./IMG/rulesIMG/book.png" alt="" srcset="">
+                                <h1>Правила проекта</h1>
+                                <h2>Осведомлён, значит вооружен!</h2>
+                            </div>
+                        </div>
+                        <div class="rulesList">
+                            <div class="rule">
+                                <a href="#rule1">
+                                    <div class="num">
+                                        <span>1</span>
+                                    </div>
+                                </a>
+                                Основные
+                            </div>
+                            <div class="rule">
+                                <a href="#rule2">
+                                    <div class="num">
+                                        <span>2</span>
+                                    </div>
+                                </a>
+                                Чат
+                            </div>
+                            <div class="rule">
+                                <a href="#rule3">
+                                    <div class="num">
+                                        <span>3</span>
+                                    </div>
+                                </a>
+                                Игровые
+                            </div>
+                        </div>
+                        <a name="rule1"></a>
+                        <div class="r1">
+                            <div class="ruleNum">
+                                <div class="arrow"></div>
+                                <div class="rulesName">1. Основные правила</div>
+                            </div>
+                            <div class="rulesText">
+                                <div class="ruleText aos-animate">
+                                    <div class="number">
+                                        <span>1.1</span>
+                                    </div>
+                                    <span class="_rule">
+                                        Пройдя регистрацию на нашем проекте, вы автоматически и безоговорочно подтверждаете свою ознакомленность и своё полное согласие с приведенным ниже сводом правил, в таком виде, в котором они есть, и обязуетесь не нарушать их. Незнание правил не освобождает вас от ответственности. В целях безопасности игроков и проекта при регистрации вы даёте согласие на обработку личных данных и личных сообщений на форуме, сайте и в игре. Запомните, шуток мы не понимаем - если вы что-то нарушили, то получили своё соответствующее наказание, поэтому думайте, что вы делаете и что пишите.
+                                    </span>
+                                </div>
+                                <div class="ruleText aos-animate">
+                                    <div class="number">
+                                        <span>1.2</span>
+                                    </div>
+                                    <span class="_rule">
+                                    Проект является бесплатной и некоммерческой структурой, предоставляющей игровые услуги без каких-либо гарантий правильности работы. Вы соглашаетесь с тем, что любые потерянные вами игровые ресурсы, деньги, пожертвованные на счет аккаунта, товары, купленные путём пожертвования в игровом онлайн магазине, и прочее не возвращаются ни при каких условиях и обстоятельствах. Все перечисления на счет являются добровольными пожертвованиями для развития проекта, а платные услуги предоставляются в качестве благодарности за материальную поддержку.
+                                    </span>
+                                </div>
+                                <div class="ruleText aos-animate">
+                                    <div class="number">
+                                        <span>1.3</span>
+                                    </div>
+                                    <span class="_rule">
+                                    Оплата услуг и пополнение денег на счёт предоставляется только на официальном сайте проекта.
+                                    </span>
+                                </div>
+                                <div class="ruleText aos-animate">
+                                    <div class="number">
+                                        <span>1.4</span>
+                                    </div>
+                                    <span class="_rule">
+                                    Запомните, вы сами несете ответственность за безопасность вашего аккаунта (используйте уникальные сложные пароли, не передавайте третьим лицам данные о вашем аккаунте и прочее), а также за любые действия, совершенные под этим аккаунтом. Взлом, кража, "играл не я, мой брат/сестра/бабушка/дедушка и прочее"- не являются оправданием. Администрация по возможности возвращает украденные при взломе вещи..
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <a name="rule2"></a>
+                        <div class="r1">
+                            <div class="ruleNum">
+                                <div class="arrow"></div>
+                                <div class="rulesName">2. Общение в чате</div>
+                            </div>
+                            <div class="rulesText">
+                                <div class="ruleText aos-animate">
+                                    <div class="number">
+                                        <span>2.1</span>
+                                    </div>
+                                    <span class="_rule">
+                                    Запрещено: - использовать мат (в том числе завуалированный/исковерканный) или нецензурную лексику в любом виде; - оскорблять или насмехаться (в виде троллинга) над игроками или их родственниками; - создавать конфликтные ситуации, путём подстрекания третьего лица на нарушение правил; - угрожать расправой в реальной жизни; - отправлять пикантные или сексуальные (порнографические) сообщения; - разжигать межнациональные розни (расизм, национализм и прочее); - пропагандировать суицид, экстремизм, террористические организации; - рассказывать про наркотические вещества; - призывать к употреблению алкогольной, табачной, наркотической продукции; - обсуждать политические действия и ситуации; - пропагандировать любую религию.
+                                    </span>
+                                </div>
+                                <div class="ruleText aos-animate">
+                                    <div class="number">
+                                        <span>2.2</span>
+                                    </div>
+                                    <span class="_rule">
+                                    Запрещена любая неуместная критика/оскорбление/унижение/принуждение/провокация/сообщения не по теме/троллинг в сторону Команды проекта или самого Проекта (сервера) в целом.
+                                    </span>
+                                </div>
+                                <div class="ruleText aos-animate">
+                                    <div class="number">
+                                        <span>2.3</span>
+                                    </div>
+                                    <span class="_rule">
+                                    Запрещено использование сообщений торгового характера в глобальном чате (не относится к вопросам о цене предмета) и использование торгового чата не по назначению. Для совершения обмена, покупки или продажи перед сообщением вместо «!» нужно использовать «$», либо же переключиться в специальную вкладку чата «Торговый».
+                                    </span>
+                                </div>
+                                <div class="ruleText aos-animate">
+                                    <div class="number">
+                                        <span>2.4</span>
+                                    </div>
+                                    <span class="_rule">
+                                    Запрещены любые виды попрошайничества (дать ресурсы, взять в долг, сменить время суток/погоду, построить за вас дом, снизить время выданного наказания и т.д).
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <a name="rule3"></a>
+                        <div class="r1">
+                            <div class="ruleNum">
+                                <div class="arrow"></div>
+                                <div class="rulesName">3. Игровой процесс</div>
+                            </div>
+                            <div class="rulesText">
+                                <div class="ruleText aos-animate">
+                                    <div class="number">
+                                        <span>3.1</span>
+                                    </div>
+                                    <span class="_rule">
+                                    Игрок, который подобрал ваши вещи в ходе PVP-сражений или найденные в мире, не обязан возвращать вам их.
+                                    </span>
+                                </div>
+                                <div class="ruleText aos-animate">
+                                    <div class="number">
+                                        <span>3.2</span>
+                                    </div>
+                                    <span class="_rule">
+                                    Запрещается портить внешний вид карты (основной мир), а также: - запрещено оставлять столбы (если они не используются для разметки) и ставить в случайном порядке блоки; - запрещается рыть глубокие ямы(кроме шахтёрского мира, ада), способные убить игрока при падении в них; - запрещается строить символику нацистской Германии или другую символику (флаги стран имеют прямое отношение к символике), которая может привести к политическим спорам; - запрещается бессмысленное разлитие жидкостей; - запрещается строить оскорбительные/порнографические постройки
+                                    </span>
+                                </div>
+                                <div class="ruleText aos-animate">
+                                    <div class="number">
+                                        <span>3.3</span>
+                                    </div>
+                                    <span class="_rule">
+                                    Запрещено совершать любые действия, направленные на дестабилизацию экономики сервера: - передача игровых ценностей (вещи, кубиксы) для аренды; - раздача (продажа предмета за несоответствующую его ценности стоимость, выброс ресурсов, ломание дома, сундуков; удаление привата и прочее). Данное правило не распространяется на людей, играющих на одном регионе.Любой обход (создание промежуточного региона, передача через другой мир и тому подобное) будет также наказываться.
+                                    </span>
+                                </div>
+                                <div class="ruleText aos-animate">
+                                    <div class="number">
+                                        <span>3.4</span>
+                                    </div>
+                                    <span class="_rule">
+                                    Запрещено создавать точки телепортации (дом/варп/релокатор и прочее) в следующих случаях: - если точка является ловушкой для других игроков; - если точка находится на чужом привате/магазине (без разрешения хозяина привата/магазина).
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </main>
+    <footer class="footer">
+        <div class="footerWrapper">
+            <div class="footerContainerFluidInner">
+                <div class="footerDefaultWrapper">
+                <div class="navFooterContainer">
+                        <div class="descriptionFooter">Курсовая работа студента Papas Alexandros группы I2102</div>
+                        <span class="USM"><a href="http://fmi.usm.md/" class="footerNavigation" target="_blank">USM</a></span>
+                    </div>
+                </div>
+                <div class="socialsContainer">
+                    <ul class="socialIcons">
+                        <li><a href="https://www.youtube.com/channel/UCbWLi6PWBwi7kjNsdvPwQlQ"><img src="./IMG/mainIMG/youtube.svg" alt="" srcset=""></a></li>
+                        <li><a href="https://vk.com/sanyamolodec"><img src="./IMG/mainIMG/vk.svg" alt="" srcset=""></a></li>
+                        <li><a href="https://www.instagram.com/1alki4/"><img src="./IMG/mainIMG/instagram.svg" alt="" srcset=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="./JS/mainAuth.js"></script>
+</div>
+</body>
+</html>
